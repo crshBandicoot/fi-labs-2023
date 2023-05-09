@@ -48,7 +48,7 @@ def I(text: str, charset: str = CHARSET_RU):
     return summ / (len(text) * (len(text) - 1))
 
 
-def get_r(text, start=2, end=30):
+def get_r(text, start=1, end=30):
     match = {}
     for r in range(start, end + 1):
         blocks = ['' for i in range(r)]
@@ -78,6 +78,13 @@ r1 = get_r(enc1)
 r2 = get_r(enc2)
 r3 = get_r(enc3)
 r4 = get_r(enc4)
+
+Iopen = I(open_text, CHARSET_RU)
+I0 = I(enc0, CHARSET_RU)
+I1 = I(enc1, CHARSET_RU)
+I2 = I(enc2, CHARSET_RU)
+I3 = I(enc3, CHARSET_RU)
+I4 = I(enc4, CHARSET_RU)
 
 print('Ir open:')
 print(open_r)
