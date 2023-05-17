@@ -4,7 +4,7 @@ from scipy.stats import norm
 
 from sequence import known_sequence
 from multiprocessing import Pool
-from array import array
+
 from base import LFSR
 
 L2_polynom = [6, 2, 1, 0]

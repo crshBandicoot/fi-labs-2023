@@ -1,9 +1,8 @@
-from array import array
 from functools import reduce
 
 
 class LFSR:
-    def __init__(self, initial: array, polynom: list[int]):
+    def __init__(self, initial: bytearray, polynom: list[int]):
         self.sequence = initial
         self.polynom = polynom
 

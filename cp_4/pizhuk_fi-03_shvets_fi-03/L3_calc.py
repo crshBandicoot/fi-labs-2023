@@ -2,7 +2,6 @@ from L2_results import results as l2_results
 from L1_results import results as l1_results
 from base import LFSR, Geffe
 from sequence import known_sequence
-from array import array
 from itertools import product
 from multiprocessing import Pool
 
@@ -26,7 +25,7 @@ def calc_L3(init):
 
 
 if __name__ == '__main__':
-    gen = (array('B', vector) for vector in product([0, 1], repeat=10))
+    gen = (bytearray(vector) for vector in product([0, 1], repeat=27))
     pool = Pool(1)
     results = pool.map(calc_L3, gen)
     results = list(filter(None, results))
