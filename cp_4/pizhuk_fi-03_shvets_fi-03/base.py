@@ -1,4 +1,5 @@
 from array import array
+from functools import reduce
 
 
 class LFSR:
@@ -10,9 +11,7 @@ class LFSR:
         seq = self.sequence
         pol = self.polynom
         result = seq[0]
-        nxt = seq[pol[0]] ^ seq[pol[1]]
-        for el in pol[2:]:
-            nxt = nxt ^ seq[el]
+        nxt = reduce(lambda i, j: seq[i] ^ seq[j], pol)
         seq.pop(0)
         seq.append(nxt)
         return result
