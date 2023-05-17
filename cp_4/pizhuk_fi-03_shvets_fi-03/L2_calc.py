@@ -25,8 +25,7 @@ if __name__ == '__main__':
     gen = (bytearray(vector) for vector in product([0, 1], repeat=26))
     pool = Pool()
     results = pool.map(calc_L2, gen)
-    results = list(filter(None, results))
-    results = sorted(results, key=lambda x: x[1])
+    results = sorted(filter(None, results), key=lambda x: x[1])
     print(results)
 
 # beta = 1 / (2 ** 26)

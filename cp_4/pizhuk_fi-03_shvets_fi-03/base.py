@@ -9,10 +9,11 @@ class LFSR:
 
     def next(self):
         seq = self.sequence
-        pol = self.polynom
         result = seq[0]
-        nxt = reduce(lambda i, j: seq[i] ^ seq[j], pol)
-        seq.pop(0)
+        nxt = 0
+        for el in self.polynom:
+            nxt ^= seq[el]
+        del seq[0]
         seq.append(nxt)
         return result
 
