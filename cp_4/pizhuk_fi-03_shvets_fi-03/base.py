@@ -3,7 +3,7 @@ from functools import reduce
 
 class LFSR:
     def __init__(self, initial: bytearray, polynom: list[int]):
-        self.sequence = initial
+        self.sequence = initial.copy()
         self.polynom = polynom
 
     def next(self):
