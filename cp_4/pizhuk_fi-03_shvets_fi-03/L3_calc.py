@@ -18,10 +18,10 @@ def calc_L3(init):
             L2 = LFSR(l2_input[0], L2_polynom)
             geffe = Geffe(L1=L1, L2=L2, L3=L3)
             for i in range(len(known_sequence)):
-                a = geffe.next()
-                if known_sequence[i] != a:
+                if known_sequence[i] != geffe.next():
                     return
             print(f'FINISHED: L1={l1_input[0]}, L2={l2_input[0]}, L3={init}')
+            return (l1_input, l2_input, init)
 
 
 if __name__ == '__main__':
