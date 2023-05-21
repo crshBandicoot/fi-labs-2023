@@ -1,6 +1,3 @@
-from functools import reduce
-
-
 class LFSR:
     def __init__(self, initial: bytearray, polynom: list[int]):
         self.sequence = initial.copy()
