@@ -1,3 +1,5 @@
+from base import Geffe, LFSR
+
 L1_input = bytearray([0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0])
 L2_input = bytearray([0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1])
 L3_input = bytearray([0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0])
@@ -5,8 +7,6 @@ L3_input = bytearray([0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1
 L1_polynom = [3, 0]
 L2_polynom = [6, 2, 1, 0]
 L3_polynom = [5, 2, 1, 0]
-
-from base import Geffe, LFSR
 
 geffe = Geffe(L1=LFSR(L1_input, L1_polynom), L2=LFSR(L2_input, L2_polynom), L3=LFSR(L3_input, L3_polynom))
 result = [str(geffe.next()) for _ in range(2048)]
