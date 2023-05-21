@@ -1,4 +1,5 @@
 from itertools import product
+from scipy.stats import norm
 from sequence import known_sequence
 from multiprocessing import Pool
 from base import LFSR
@@ -25,7 +26,11 @@ if __name__ == '__main__':
     print(results)
 
 # beta = 1 / (2 ** 25)
-# print(norm.ppf(1 - beta, loc=0, scale=1))
-# print(norm.ppf(0.99, loc=0, scale=1))
+# t_beta = norm.ppf(1 - beta, loc=0, scale=1)
+# t_alpha = norm.ppf(0.99, loc=0, scale=1)
+# print(beta)
+# print(t_beta)
+# print(t_alpha)
+# # solve C = n/4+t_alpha*sqrt(3n/16); t_beta = (n/2 - C)/sqrt(n/4)
 # C = 71
 # N = 222
